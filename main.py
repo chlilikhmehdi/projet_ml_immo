@@ -31,7 +31,7 @@ def load_model():
 try:
     model = load_model()
 except Exception as e:
-    st.error("Impossible de charger le modèle Machine Learning.")
+    st.error("Impossible de charger le modèle Machine Learningw.")
     st.exception(e)
     st.stop()
 
