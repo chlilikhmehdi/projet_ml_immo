@@ -176,3 +176,4 @@ Werkzeug==3.1.9
 widgetsnbextension==4.0.16
 yarl==1.25.1
 zipp==4.1.2
+huggingface_hub
