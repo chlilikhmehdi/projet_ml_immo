@@ -13,4 +13,4 @@ mlruns/
 mlartifacts/
 
 # Fichiers temporaires
-.DS_Store
+.DS_Storesrc/model.pkl
