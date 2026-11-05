@@ -1,0 +1,32 @@
+name: CI Pipeline
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Installer les dépendances
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Vérifier la qualité du code
+        run: flake8 src/ tests/ --count --show-source --statistics
+
+      - name: Entraîner le modèle
+        run: python src/train.py
+
+      - name: Exécuter les tests
+        run: pytest -v tests/
